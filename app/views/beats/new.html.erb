@@ -1,10 +1,27 @@
 <head>
 
 <script type="text/javascript">
+var idcount = 1
+function soundoff(source){
+putsound(source);
 
-function soundoff(id){
-document.getElementById(id).play(); 
+idcount = idcount+1
 }
+
+function putsound(source){
+var n = document.createElement('audio');
+n.setAttribute('autoplay', 'autoplay')
+n.setAttribute('id', idcount)
+n.setAttribute('controls', 'controls')
+n.setAttribute('style', 'visibility: hidden')
+n.setAttribute('onended', 'timeoutsound(this,4)')
+n.setAttribute('id', 'autoplay')
+n.innerHTML = '<source src='+source+' />'
+document.body.insertBefore(n,document.getElementById("0"))
+
+
+}
+
 function timeoutsound(audio,time){
 setTimeout(function (){audio.play();}, time*1000)
 }
@@ -14,14 +31,10 @@ setTimeout(function (){audio.play();}, time*1000)
 <h1>New image</h1>
 
 <% for sound in @sounds %>
-<button type="button" onclick="<%= "soundoff(\"#{sound.id}\")" %>"> <%= sound.photo_id %></button>
-<audio id="<%= sound.id %>" controls="controls" style="visibility: hidden" onended="timeoutsound(this,4)"> <source src=<%= sound.photo.url %> /></audio>
+<button type="button" onclick="<%= "soundoff(\"#{sound.photo.url}\")" %>"> <%= sound.photo_id %></button>
 <% end %>
 
-<script type="text/javascript">
-function putsound(id){
-document.write('<audio id="<%= sound.id %>" controls="controls" style="visibility: hidden" onended="timeoutsound(this,4)"> <source src=<%= sound.photo.url %> /></audio>');
-}
-</script>
-
+<div id="0">
+me
+</div>
 <%= link_to 'Back', images_path %>
