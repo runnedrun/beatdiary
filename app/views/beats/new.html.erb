@@ -14,7 +14,7 @@ n.setAttribute('autoplay', 'autoplay')
 n.setAttribute('id', idcount)
 n.setAttribute('controls', 'controls')
 n.setAttribute('style', 'visibility: hidden')
-n.setAttribute('onplaying', 'timeoutsound(this,4)')
+n.setAttribute('onplaying', 'timeoutsound(this,5)')
 
 n.innerHTML = '<source src='+source+' />'
 document.body.insertBefore(n,document.getElementById("0"))
@@ -37,4 +37,7 @@ setTimeout(function (){audio.play();}, time*1000)
 <div id="0">
 me
 </div>
+<audio autoplay="autoplay" controls="controls" style="visibility: hidden" onplaying="timeoutsound(this,3)"> 
+    <source src="/system/photos/3/original/sly2.wav" /> 
+</audio> 
 <%= link_to 'Back', images_path %>
