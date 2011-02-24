@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @beat.name %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @beat.length %>
+</p>
+
+
+<%= link_to 'Edit', edit_beat_path(@beat) %> |
+<%= link_to 'Back', beats_path %>

@@ -1,0 +1,14 @@
+development:
+  bucket: myappdevelopment
+  access_key_id: AKIAJNYFNAGZYHPJ4ZIA
+  secret_access_key: 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
+
+test:
+  bucket: myapptest
+  access_key_id: AKIAJNYFNAGZYHPJ4ZIA
+  secret_access_key: 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
+
+production:
+  bucket: myapp
+  access_key_id: AKIAJNYFNAGZYHPJ4ZIA
+  secret_access_key: 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

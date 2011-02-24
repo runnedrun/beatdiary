@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Latitude: 9.99
+  Longitude: 9.99
+  caption: MyText
+  photo_id: MyString
+
+two:
+  Latitude: 9.99
+  Longitude: 9.99
+  caption: MyText
+  photo_id: MyString

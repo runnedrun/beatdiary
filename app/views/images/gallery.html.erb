@@ -1,0 +1,11 @@
+<h1>Visionopolis</h1>
+
+<% if @nearby.length > 0 %>
+<% @nearby.sort_by { rand }%> <p><%= image_tag @nearby[0].photo.url %></p>
+<% end %>
+
+<%= link_to 'Back', images_path %>
+
+<br />
+
+<%= link_to 'New Image', new_image_path %>

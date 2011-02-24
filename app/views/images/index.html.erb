@@ -1,0 +1,45 @@
+<h1>Visionopolis</h1>
+<% x=0 %>
+<% @images.each do |image| x += 1 end %>
+<% if x >= 1 then %>
+<table cellpadding = '10'>
+  <tr>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Caption</th>
+<!--    <th>Photo</th> -->
+	<th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @images.each do |image| %>
+  <tr>
+    <td><%= image.Latitude %></td>
+    <td><%= image.Longitude %></td>
+    <td><%= image.caption %></td>
+  <!--  <td><%= image.photo_id %></td> -->
+	<td>
+<p><%= image_tag image.photo.url %></p>
+</td>
+    <td><%= link_to 'Show', image %></td>
+    <td><%= link_to 'Edit', edit_image_path(image) %></td>
+    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+</table>
+
+
+<%= render 'locationform' %>
+
+<%= link_to 'Back', images_path %>
+
+
+<% else %>
+<p> There are no photo's attached mayn, upload one. </p>
+<% end %>
+<br />
+
+<%= link_to 'New Image', new_image_path %>
