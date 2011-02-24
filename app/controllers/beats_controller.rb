@@ -25,7 +25,7 @@ class BeatsController < ApplicationController
   # GET /beats/new.xml
   def new
     @beat = Beat.new
-
+    @sounds = Image.find(Image.all(:select => :id).map(&:id).sort_by{rand}[0..10])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @beat }
