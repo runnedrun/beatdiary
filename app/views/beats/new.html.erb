@@ -14,8 +14,8 @@ n.setAttribute('autoplay', 'autoplay')
 n.setAttribute('id', idcount)
 n.setAttribute('controls', 'controls')
 n.setAttribute('style', 'visibility: hidden')
-n.setAttribute('onended', 'timeoutsound(this,4)')
-n.setAttribute('id', 'autoplay')
+n.setAttribute('onplaying', 'timeoutsound(this,4)')
+
 n.innerHTML = '<source src='+source+' />'
 document.body.insertBefore(n,document.getElementById("0"))
 
